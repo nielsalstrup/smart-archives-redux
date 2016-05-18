@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: Smart Archives Reloaded
+Plugin Name: Smart Archives Redux
 Version: 2.0.5
-Description: An elegant and easy way to present your posts, grouped by year and month.
+Description: An elegant and easy way to present your posts, grouped by year and month. Forked from scribu
 Author: scribu
 Author URI: http://scribu.net
 Plugin URI: http://scribu.net/wordpress/smart-archives-reloaded
-Text Domain: smart-archives-reloaded
+Text Domain: smart-archives-redux
 Domain Path: /lang
 */
 
@@ -15,10 +15,11 @@ require dirname( __FILE__ ) . '/scb/load.php';
 define( 'SAR_VERSION', '2.0' );
 
 function _sar_init() {
-	load_plugin_textdomain( 'smart-archives-reloaded', '', dirname( plugin_basename( __FILE__ ) ) . '/lang' );
+	load_plugin_textdomain( 'smart-archives-redux', '', dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 
 	require_once dirname( __FILE__ ) . '/core.php';
 	require_once dirname( __FILE__ ) . '/generator.php';
+	require_once dirname( __FILE__ ) . '/widget.php';
 
 	$options = new scbOptions( 'smart-archives', __FILE__, array(
 		'format' => 'both',
